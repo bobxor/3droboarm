@@ -1,8 +1,11 @@
 # Python3 exec(open("./demo1.py").read())
 
 import time
-import ssc32
-ssc = ssc32.SSC32('COM8', 115200, count=16)
+from py3ssc32 import ssc32
+#ssc = ssc32.SSC32('COM8', 115200, count=16)
+
+# Jetson Nano Example
+ssc = ssc32.SSC32('/dev/ttyTHS1', 115200, count=16)
 ssc[0].name = 'wrist'
 ssc[1].name = 'thumb'
 ssc[2].name = 'index'
